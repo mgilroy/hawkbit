@@ -12,6 +12,8 @@ services:
 
   # ---------------------
   # hawkBit service
+  # username: admin
+  # password: admin
   # ---------------------
   hawkbit:
     image: "hawkbit/hawkbit-update-server:latest-mysql"
@@ -79,7 +81,7 @@ services:
         condition: on-failure
     environment:
       MYSQL_DATABASE: "hawkbit"
-      MYSQL_USER: "root"
+      # MYSQL_USER: "root" is created by default in the container for mysql 5.7+
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
 
 
